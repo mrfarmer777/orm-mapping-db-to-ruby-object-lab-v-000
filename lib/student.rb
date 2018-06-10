@@ -15,7 +15,7 @@ class Student
     # remember each row should be a new instance of the Student class
     sql="SELECT * FROM students"
     DB[:conn].execute(sql).map do |row|
-      Students.new_from_db(row)
+      Student.new_from_db(row)
     end
   end
 
@@ -24,7 +24,7 @@ class Student
     # return a new instance of the Student class
     sql="SELECT * FROM students WHERE students.name=(?)"
     stu_row=DB[:conn].execute(sql,name)
-    Students.new_from_db(stu_row)
+    Student.new_from_db(stu_row)
   end
 
   def save
