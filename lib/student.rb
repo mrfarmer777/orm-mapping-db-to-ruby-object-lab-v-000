@@ -37,9 +37,9 @@ class Student
 
   def self.students_below_12th_grade
     sql="SELECT * FROM students WHERE grade<12"
-    stu_data=DB[:conn].execute(sql)
-    stu_data.map do |stu_row|
-      Student.new_from_db(stu_row)
+    stu_data=DB[:conn].execute(sql)  #execute sql and store it in stu_data array of rows
+    stu_data.map do |stu_row|       #map each row 
+      Student.new_from_db(stu_row)  #build an array of objects from the rows
     end
   end
 
