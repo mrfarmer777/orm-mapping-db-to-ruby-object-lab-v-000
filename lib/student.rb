@@ -47,7 +47,7 @@ class Student
     sql="SELECT * FROM students WHERE grade=10 LIMIT (?)"
     data=DB[:conn].execute(sql,num)
     data.map do |stu_row|
-      Studnet.new_from_db(stu_row)
+      Studnent.new_from_db(stu_row)
     end
   end
 
