@@ -43,6 +43,14 @@ class Student
     end
   end
 
+  def self.first_x_students_in_grade_10(num)
+    sql="SELECT * FROM students WHERE grade=10 LIMIT (?)"
+    data=DB[:conn].execute(sql,num)
+    data.map do |stu_row|
+      Studnet.new_from_db(stu_row)
+    end
+  end
+
 
   def save
     sql = <<-SQL
