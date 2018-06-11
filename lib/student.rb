@@ -26,7 +26,8 @@ class Student
     sql="SELECT * FROM students WHERE name=(?)"
     #binding.pry
     stu_row=DB[:conn].execute(sql,name)
-    Student.new_from_db(stu_row)
+    stu=Student.new_from_db(stu_row)
+    stu
   end
 
   def save
