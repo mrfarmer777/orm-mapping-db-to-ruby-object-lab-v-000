@@ -53,7 +53,7 @@ class Student
 
   def self.first_student_in_grade_10
     sql="SELECT * FROM students WHERE grade=10 LIMIT 1"
-    stu=DB[:conn].execute(sql)[0][0]
+    stu=DB[:conn].execute(sql)[0]
     binding.pry
     Student.new_from_db(stu)
   end
